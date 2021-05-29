@@ -23,9 +23,15 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.bangkit.signforyou.R
+import com.bangkit.signforyou.ui.translation.TfliteViewModel
 import com.bangkit.signforyou.ui.translation.tflite.Classifier
 import com.bangkit.signforyou.utils.ImageUtils
+import com.google.firebase.ml.modeldownloader.CustomModel
+import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions
+import com.google.firebase.ml.modeldownloader.DownloadType
+import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader
 import java.io.File
 import java.util.*
 import java.util.concurrent.Semaphore
@@ -36,6 +42,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback {
 
 
+    private var modelFile: File? = null
     private var resultTranslate = ""
     private var rgbBytes: IntArray? = null
     private lateinit var previewReader: ImageReader
@@ -43,6 +50,10 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
     private val mModelPath = "asl_modelMaker.tflite"
     private val mLabelPath = "asl_labels.txt"
     private var rgbFrameBitmap: Bitmap? = null
+
+    private val tfliteViewModel by lazy {
+        ViewModelProvider(this).get(TfliteViewModel::class.java)
+    }
 
     /**
      * [TextureView.SurfaceTextureListener] handles several lifecycle events on a
@@ -281,8 +292,15 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         file = File(activity?.getExternalFilesDir(null), PIC_FILE_NAME)
+//        trackingViewModel.getTracking().observe(viewLifecycleOwner, Observer { list ->
+//            adapter.submitList(list)
+//        })
 
-        classifier = Classifier(requireActivity().assets, mModelPath, mLabelPath, mInputSize);
+        tfliteViewModel.getModel().observe(viewLifecycleOwner, androidx.lifecycle.Observer { file ->
+            classifier = Classifier(requireActivity().assets, file, mLabelPath, mInputSize);
+        })
+
+
         btnBack.setOnClickListener {
             requireActivity().onBackPressed()
         }
@@ -966,5 +984,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
         imageConverter?.run()
         return rgbBytes
     }
+
+
 
 }

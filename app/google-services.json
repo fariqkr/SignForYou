@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1021322026499",
+    "project_id": "sign-for-you-313814",
+    "storage_bucket": "sign-for-you-313814.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021322026499:android:b710efbef2ec6f06083836",
+        "android_client_info": {
+          "package_name": "com.bangkit.signforyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021322026499-asqjvjgc4asrkko8k9fakt9v98puel0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7NrlXZk6Tmzw4Ge8BLqFBXGsEpzZoK8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021322026499-asqjvjgc4asrkko8k9fakt9v98puel0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,14 @@ import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.os.SystemClock
 import android.util.Log
+import androidx.lifecycle.ViewModelProvider
+import com.bangkit.signforyou.ui.translation.TfliteViewModel
+import com.google.firebase.ml.modeldownloader.CustomModel
+import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions
+import com.google.firebase.ml.modeldownloader.DownloadType
+import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader
 import org.tensorflow.lite.Interpreter
+import java.io.File
 import java.io.FileInputStream
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
@@ -13,7 +20,7 @@ import java.nio.channels.FileChannel
 import java.util.*
 
 
-class Classifier(assetManager: AssetManager, modelPath: String, labelPath: String, inputSize: Int) {
+class Classifier(assetManager: AssetManager, modelFile: File, labelPath: String, inputSize: Int) {
     private var INTERPRETER: Interpreter
     private var LABEL_LIST: List<String>
     private val INPUT_SIZE: Int = inputSize
@@ -22,6 +29,7 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
     private val IMAGE_STD = 255.0f
     private val MAX_RESULTS = 3
     private val THRESHOLD = 0.4f
+    private var MODEL_FILE: File? = null
 
     data class Recognition(
             var id: String = "",
@@ -34,11 +42,36 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
     }
 
     init {
+        downloadModel()
         val tfliteOptions = Interpreter.Options()
         tfliteOptions.setNumThreads(5)
         tfliteOptions.setUseNNAPI(true)
-        INTERPRETER = Interpreter(loadModelFile(assetManager, modelPath),tfliteOptions)
+        INTERPRETER = Interpreter(modelFile, tfliteOptions)
+//        INTERPRETER = Interpreter(loadModelFile(assetManager, modelPath),tfliteOptions)
         LABEL_LIST = loadLabelList(assetManager, labelPath)
+    }
+
+    fun downloadModel(){
+        val conditions = CustomModelDownloadConditions.Builder()
+//            .requireWifi()  // Also possible: .requireCharging() and .requireDeviceIdle()
+            .build()
+        FirebaseModelDownloader.getInstance()
+            .getModel("SignForYou", DownloadType.LOCAL_MODEL_UPDATE_IN_BACKGROUND,
+                conditions)
+            .addOnSuccessListener { model: CustomModel? ->
+                // Download complete. Depending on your app, you could enable the ML
+                // feature, or switch from the local model to the remote model, etc.
+
+                // The CustomModel object contains the local path of the model file,
+                // which you can use to instantiate a TensorFlow Lite interpreter.
+                val modelFile = model?.file
+                if (modelFile != null) {
+                    MODEL_FILE = modelFile
+                }
+            }
+            .addOnFailureListener {
+                Log.e("errr", it.toString())
+            }
     }
 
     private fun loadModelFile(assetManager: AssetManager, modelPath: String): MappedByteBuffer {
