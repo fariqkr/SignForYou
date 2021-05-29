@@ -12,4 +12,7 @@
     <color name="stroke1">#4B7FFB</color>
     <color name="stroke2">#65C52A</color>
     <color name="stroke3">#EF716B</color>
+    <color name="dict_item">#4C81FC</color>
+    <color name="control_background">#cc4285f4</color>
+
 </resources>

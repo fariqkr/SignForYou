@@ -7,7 +7,9 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.signforyou.data.Feature
 import com.bangkit.signforyou.databinding.ItemFeatureBinding
+import com.bangkit.signforyou.ui.dictionary.DictionaryActivity
 import com.bangkit.signforyou.ui.translation.TranslateActivity
+import com.bangkit.signforyou.ui.translation.camera.CameraActivity
 
 class FeatureAdapter : RecyclerView.Adapter<FeatureAdapter.CourseViewHolder>() {
     private var listFeature = ArrayList<Feature>()
@@ -47,6 +49,14 @@ class FeatureAdapter : RecyclerView.Adapter<FeatureAdapter.CourseViewHolder>() {
 
                 itemView.setOnClickListener {
                     if (titleFeature.text == "Translate") {
+                        val intent = Intent(itemView.context, CameraActivity::class.java)
+                        itemView.context.startActivity(intent)
+                    }
+                    else if (titleFeature.text == "Mini Dictionary") {
+                        val intent = Intent(itemView.context, DictionaryActivity::class.java)
+                        itemView.context.startActivity(intent)
+                    }
+                    else if (titleFeature.text == "Quiz") {
                         val intent = Intent(itemView.context, TranslateActivity::class.java)
                         itemView.context.startActivity(intent)
                     }

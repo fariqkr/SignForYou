@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 R.drawable.bg_feature
             ),
             Feature(
-                "Learning",
+                "Mini Dictionary",
                 "Increase your experience in using sign language",
                 R.drawable.feature_learning,
                 R.drawable.bg_feature2
