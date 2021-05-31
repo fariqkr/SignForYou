@@ -6,6 +6,11 @@ import android.view.View
 import com.bangkit.signforyou.data.Dictionary
 import com.bangkit.signforyou.databinding.ActivityDetailBinding
 import com.bangkit.signforyou.utils.Dictionaries
+import com.bangkit.signforyou.utils.GlideApp
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class DetailActivity : AppCompatActivity(){
 
@@ -41,6 +46,8 @@ class DetailActivity : AppCompatActivity(){
             onBackPressed()
         }
 
+
+
     }
 
     fun updateView(dictionary: Dictionary){
@@ -59,6 +66,19 @@ class DetailActivity : AppCompatActivity(){
         else {
             binding.nextBtn.visibility = View.VISIBLE
         }
+
+        var firebaseStorage: FirebaseStorage? = null
+        var storageReference: StorageReference? = null
+
+        firebaseStorage = FirebaseStorage.getInstance()
+        storageReference = firebaseStorage.reference
+        val refPhotoDictionary = storageReference.child("dictionary/${dictionary.title}.png")
+
+
+        GlideApp.with(this)
+            .load(refPhotoDictionary)
+            .override(400,400)
+            .into(binding.imageDetail)
     }
 
     fun getDictionary(position: Int) : Dictionary? {
