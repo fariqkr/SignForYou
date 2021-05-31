@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.signforyou.data.Feature
 import com.bangkit.signforyou.databinding.ItemFeatureBinding
 import com.bangkit.signforyou.ui.dictionary.DictionaryActivity
+import com.bangkit.signforyou.ui.help.HelpActivity
 import com.bangkit.signforyou.ui.translation.TranslateActivity
 import com.bangkit.signforyou.ui.translation.camera.CameraActivity
 
@@ -56,8 +57,8 @@ class FeatureAdapter : RecyclerView.Adapter<FeatureAdapter.CourseViewHolder>() {
                         val intent = Intent(itemView.context, DictionaryActivity::class.java)
                         itemView.context.startActivity(intent)
                     }
-                    else if (titleFeature.text == "Quiz") {
-                        val intent = Intent(itemView.context, TranslateActivity::class.java)
+                    else if (titleFeature.text == "Help") {
+                        val intent = Intent(itemView.context, HelpActivity::class.java)
                         itemView.context.startActivity(intent)
                     }
                 }

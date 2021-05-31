@@ -28,4 +28,17 @@
 
         ]]>
     </string>
+    <string name="translate">Translate</string>
+    <string name="translate_info">Lets go to our core feature, the translator. You can use the feature by click the icon above.</string>
+    <string name="camera_box">Camera Box</string>
+    <string name="translation_box">Translation Box</string>
+    <string name="translate_page_info">We’ll move to other page, as you can see we have camera view and translation box. Lets go one by one.</string>
+    <string name="camera_box_tag"># Camera Box</string>
+    <string name="camera_box_info">This box will require permission to use your camera. In this box you can translate sign language by moving your camera into someone\'s hand.</string>
+    <string name="translate_box_info">The translation result from your camera will be place in here. We have two button in the bottom of the box</string>
+    <string name="translation_box_tag"># Translation Box</string>
+    <string name="back_btn_info">Back Button, this button will take you to the home page.</string>
+    <string name="reload_btn_info">Reload Button, use it if you want to re-translate the translation. It will erase the translation on the translation box</string>
+    <string name="how_to_use">HOW TO USE</string>
+    <string name="example">Example</string>
 </resources>

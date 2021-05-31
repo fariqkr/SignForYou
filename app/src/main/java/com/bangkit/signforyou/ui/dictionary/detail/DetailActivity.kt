@@ -2,9 +2,7 @@ package com.bangkit.signforyou.ui.dictionary.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import com.bangkit.signforyou.R
 import com.bangkit.signforyou.data.Dictionary
 import com.bangkit.signforyou.databinding.ActivityDetailBinding
 import com.bangkit.signforyou.utils.Dictionaries

@@ -3,14 +3,10 @@ package com.bangkit.signforyou.ui.dictionary
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.signforyou.data.Dictionary
-import com.bangkit.signforyou.data.Feature
 import com.bangkit.signforyou.databinding.ItemDictionaryBinding
-import com.bangkit.signforyou.databinding.ItemFeatureBinding
 import com.bangkit.signforyou.ui.dictionary.detail.DetailActivity
-import com.bangkit.signforyou.ui.translation.TranslateActivity
 
 class DictionaryAdapter : RecyclerView.Adapter<DictionaryAdapter.CourseViewHolder>() {
     private var listDictionary = ArrayList<Dictionary>()
