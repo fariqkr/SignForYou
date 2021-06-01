@@ -13,16 +13,7 @@ class HelpActivity : AppCompatActivity() {
         val activityHelpBinding = ActivityHelpBinding.inflate(layoutInflater)
         setContentView(activityHelpBinding.root)
 
-        var firebaseStorage: FirebaseStorage? = null
-        var storageReference: StorageReference? = null
 
-        firebaseStorage = FirebaseStorage.getInstance()
-        storageReference = firebaseStorage.reference
-        val refVideo = storageReference.child("video_tutorial/demo capstone 'bobo'_Trim.mp4")
-
-        refVideo.downloadUrl.addOnSuccessListener {
-            activityHelpBinding.videoTutorial.setVideoURI(it)
-        }
 
 
     }
