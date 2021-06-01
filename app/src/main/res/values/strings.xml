@@ -42,9 +42,12 @@
     <string name="how_to_use">HOW TO USE</string>
     <string name="example">Example</string>
     <string name="steps">
-        <br>1. on the top line, the application will detect the letters in realtime</br>
-        <br>2. wait until the letters that are detected doesn\'t change</br>
-        <br>3. press the checklist button to store letters</br>
+        <br><b>Step 1</b>\n</br>
+        <br>On the top line, the application will detect the letters in realtime\n</br>
+        <br><b>Step 2</b>\n</br>
+        <br>Wait until the letters that are detected doesn\'t change\n</br>
+        <br><b>Step 3</b>\n</br>
+        <br>Press the checklist button to store letters\n</br>
     </string>
     <string name="accept_btn_info"><b>Accept Button</b>, click this button if the word appears in the translation box does not change repeteadly</string>
 </resources>
