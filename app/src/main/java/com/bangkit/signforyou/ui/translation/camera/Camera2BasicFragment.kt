@@ -945,15 +945,15 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
 
                     imageConverter = Runnable {
                         ImageUtils.convertYUV420ToARGB8888(
-                                yuvBytes[0],
-                                yuvBytes[1],
-                                yuvBytes[2],
+                                yuvBytes[0]!!,
+                                yuvBytes[1]!!,
+                                yuvBytes[2]!!,
                                 previewSize.width,
                                 previewSize.height,
                                 yRowStride,
                                 uvRowStride,
                                 uvPixelStride,
-                                rgbBytes
+                                rgbBytes!!
                         )
                     }
 
