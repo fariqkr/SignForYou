@@ -12,7 +12,11 @@ Speech impairment is a disability which affects an individuals ability to commun
   - Cloud: Made a project in google cloud platform, manage IAM roles, creating alerting for billing, then connect the GCP project in firebase, upload the ML model in machine learning (custom), create a bucket with firestore, create business / go-to market proposal.
 
 ## Screenshot
-![ss_home](https://user-images.githubusercontent.com/48057016/120464700-6bd59600-c3c7-11eb-8f11-130da17a6b82.jpg) ![ss_translation](https://user-images.githubusercontent.com/48057016/120464709-6e37f000-c3c7-11eb-88d4-9e23d4bd9b4f.jpg) ![ss_dictionary](https://user-images.githubusercontent.com/48057016/120464720-7132e080-c3c7-11eb-993f-07eb2f2e1781.jpg) ![ss_dictionary_detail](https://user-images.githubusercontent.com/48057016/120464731-73953a80-c3c7-11eb-8ab5-5fdcb8a062e4.jpg) ![ss_help](https://user-images.githubusercontent.com/48057016/120464650-5d877a00-c3c7-11eb-8205-3b652d9ef5a1.jpg)
+<img src="https://user-images.githubusercontent.com/48057016/120464700-6bd59600-c3c7-11eb-8f11-130da17a6b82.jpg" width=100>
+![ss_translation](https://user-images.githubusercontent.com/48057016/120464709-6e37f000-c3c7-11eb-88d4-9e23d4bd9b4f.jpg) 
+![ss_dictionary](https://user-images.githubusercontent.com/48057016/120464720-7132e080-c3c7-11eb-993f-07eb2f2e1781.jpg) 
+![ss_dictionary_detail](https://user-images.githubusercontent.com/48057016/120464731-73953a80-c3c7-11eb-8ab5-5fdcb8a062e4.jpg) 
+![ss_help](https://user-images.githubusercontent.com/48057016/120464650-5d877a00-c3c7-11eb-8205-3b652d9ef5a1.jpg)
 
 ## Running application
 1. Open terminal and enter git clone https://github.com/fariqkr/SignForYou 
