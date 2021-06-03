@@ -11,6 +11,10 @@ Speech impairment is a disability which affects an individuals ability to commun
   - Android : Design UI/UX of the App, Connect project to firebase,Implement ML model with tflite file from firebase ML, Create Mini Dictionary (A-Z) with sample image from firebase, Create Help Explanation Page
   - Cloud: Made a project in google cloud platform, manage IAM roles, creating alerting for billing, then connect the GCP project in firebase, upload the ML model in machine learning (custom), create a bucket with firestore, create business / go-to market proposal.
 
+## Model
+On this project we use transfer learning with EfficientNet as base model. The model is saved to tflite format.
+The model notebook and it's tflite files can be seen at this link: https://github.com/KhresnaPanduI/ASL_modelmaker/
+
 ## Screenshot
 <img src="https://user-images.githubusercontent.com/48057016/120464700-6bd59600-c3c7-11eb-8f11-130da17a6b82.jpg" width=200>
 <img src="https://user-images.githubusercontent.com/48057016/120464709-6e37f000-c3c7-11eb-88d4-9e23d4bd9b4f.jpg" width=200>
