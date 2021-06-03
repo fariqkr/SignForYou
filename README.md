@@ -7,7 +7,7 @@ This is the Capstone Project of team B21-CAP0209 for Bangkit 2021
 ## Overview
 
 Speech impairment is a disability which affects an individuals ability to communicate using speech and hearing. Although sign language is ubiquitous in recent times, there remains a challenge for non-sign language speakers to communicate with sign language speakers or signers. With recent advances in deep learning and computer vision there has been promising progress in the fields of motion and gesture recognition using deep learning and computer vision based techniques. The focus of this work is to create a vision-based application that offers sign language translation to text thus aiding communication between signers and non-signers.
-  - Machine Learning :
+  - Machine Learning : Perform in depth literature review, create dataset using Teachable Machine, Building models with transfer learning, convert model to TensorFlow lite and using data pipeline to serve the model.
   - Android : Design UI/UX of the App, Connect project to firebase,Implement ML model with tflite file from firebase ML, Create Mini Dictionary (A-Z) with sample image from firebase, Create Help Explanation Page
   - Cloud: Made a project in google cloud platform, manage IAM roles, creating alerting for billing, then connect the GCP project in firebase, upload the ML model in machine learning (custom), create a bucket with firestore, create business / go-to market proposal.
 
@@ -21,6 +21,7 @@ Speech impairment is a disability which affects an individuals ability to commun
 ## Running application
 1. Open terminal and enter git clone https://github.com/fariqkr/SignForYou 
 2. Start Android Studio
-3. Open the project within ../SignForYou/ folder
+3. Open the project within SignForYou folder
 4. Connect project to Firebase
-5. Run the project with Android Studio using either the emulator or physical device
+5. Upload ML model to firebase
+6. Run the project with Android Studio using either the emulator or physical device
