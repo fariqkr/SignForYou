@@ -15,7 +15,7 @@ Speech impairment is a disability which affects an individuals ability to commun
 On this project we use transfer learning with EfficientNet as base model. The model is saved to tflite format.
 The model notebook and it's tflite files can be seen at this link: https://github.com/KhresnaPanduI/ASL_modelmaker/
 
-# Translation Demo
+## Translation Demo
 Steps to use translate feature:
 1. on the top line, the application will detect the letters in realtime
 2. wait until the letters that are detected doesn't change
